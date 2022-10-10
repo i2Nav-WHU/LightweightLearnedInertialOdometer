@@ -5,7 +5,7 @@ Code for paper: "LLIO: Lightweight Learned Inertial Odometer"
 
 Install dependency use pip:
 ```bash
-pip install pytorch einops numpy
+pip install torch einops numpy
 ```
 
 ## Usage
