@@ -237,6 +237,10 @@ class TwoLayerModel(nn.Module):
 if __name__ == '__main__':
     # Test Transformer
 
+    # *|CURSOR_MARCADOR|*
+    #
+    #
+    #
     model_para = {
         "input_len": 100,
         "input_channel": 6,
@@ -258,7 +262,11 @@ if __name__ == '__main__':
     }
 
     net = TwoLayerModel(model_para) # initialize the model
-    x = torch.rand([512, 6, 100]) # batch_size, [6 -axis, sample_num],
+    x = torch.rand([512, 6, 100]) # batch_size, input_channel, input_len
+    '''
+    For example: 
+    1 seconds of imu output at 100Hz, we got [6 x 100] matrix.
+    '''
 
     y, y_cov = net(x) # output: [batch_size, 3], [batch_size, 3]
     print('x:', x.shape, 'y', y.shape, 'y_cov', y_cov.shape)
